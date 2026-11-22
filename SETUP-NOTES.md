@@ -125,3 +125,20 @@ Because the repository will be public, anyone can see the email address recorded
 4. Made the first commit.
 
 **Note:** the repository will be public. Before committing, check files for private details such as personal email addresses or confidential employer material.
+
+### Step 7: Create the GitHub repository (2026-11-22)
+
+Ran this from the `portfolio` folder:
+
+```bash
+gh repo create portfolio --public --source . --remote origin --push --description "John Marks – technical writing portfolio"
+```
+
+It created a public repository at https://github.com/johnbmarks/portfolio, linked the local folder to it under the name `origin`, and pushed (uploaded) the first commit on the `main` branch.
+
+**Result:** the repository is public. The local `main` branch is linked to `origin/main` and up to date.
+
+**Notes:**
+- **Public means read-only for others.** People can view, copy (fork), or suggest changes (pull requests), but only the account owner can change the repository. Nothing on GitHub can reach the Mac. Changes only come down when you choose **Fetch** or **Pull**.
+- **Backup:** every push stores the files and their full history on GitHub. Push often, because anything not pushed exists only on the Mac.
+- GitHub can take a few minutes to recognize the MIT license and show it in the repository sidebar.

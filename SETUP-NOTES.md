@@ -186,3 +186,15 @@ It created a public repository at https://github.com/johnbmarks/portfolio, linke
 - Pages had to be turned on **before** the first push. Otherwise the first publishing run would have failed.
 - Pages is free for public repositories. To take the site offline, turn Pages off in **Settings → Pages**.
 - Only text files are pushed. `node_modules/` and `build/` stay on the Mac. GitHub downloads its own copy of Docusaurus from `package.json`.
+
+### Step 10: First publish (2026-11-22)
+
+Added the repository to GitHub Desktop (**Add an Existing Repository from your Local Drive** → `~/GitHub/portfolio`) and clicked **Push origin** to upload 4 commits.
+
+**Result:** the push started the **Deploy to GitHub Pages** workflow (build 57 s, deploy 10 s). The site is live at **https://johnbmarks.github.io/portfolio/**. Home, Portfolio, Resume, About, and Blog all load.
+
+**Notes:**
+- You can watch each publish on github.com under **portfolio → Actions**: a yellow dot means running, a green tick means published, a red cross means failed.
+- The run showed warnings that "Node.js 20 is deprecated" for the GitHub-provided actions. They're harmless for now (GitHub runs them on a newer Node.js automatically). Updating the action versions in `deploy.yml` later will clear them.
+- The "Summary" box in GitHub Desktop is only for new, uncommitted changes. When it says "No local changes", there's nothing to commit.
+- Keep private files (such as GitHub recovery codes) out of the `portfolio` folder. Anything inside it can be published.

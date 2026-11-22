@@ -1,0 +1,39 @@
+/* Styles for the home page only */
+
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.thesis {
+  max-width: 46rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* White outline button that stays readable on the blue banner */
+.outlineButton {
+  color: #fff;
+  --ifm-button-border-color: #fff;
+}
+
+.outlineButton:hover {
+  color: var(--ifm-color-primary-darkest);
+  background-color: #fff;
+}

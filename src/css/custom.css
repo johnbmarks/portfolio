@@ -1,0 +1,28 @@
+/**
+ * Site-wide styles. The colors below set the site's main (primary) color.
+ * Docusaurus uses Infima: https://infima.dev
+ */
+
+:root {
+  --ifm-color-primary: #1f5f8b;
+  --ifm-color-primary-dark: #1c567d;
+  --ifm-color-primary-darker: #1a5176;
+  --ifm-color-primary-darkest: #154361;
+  --ifm-color-primary-light: #226899;
+  --ifm-color-primary-lighter: #246da0;
+  --ifm-color-primary-lightest: #297bb5;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* Lighter shades for dark mode, so text stays readable */
+[data-theme='dark'] {
+  --ifm-color-primary: #6cb4e4;
+  --ifm-color-primary-dark: #52a7e0;
+  --ifm-color-primary-darker: #45a1dd;
+  --ifm-color-primary-darkest: #258dd1;
+  --ifm-color-primary-light: #86c1e8;
+  --ifm-color-primary-lighter: #93c7eb;
+  --ifm-color-primary-lightest: #bad9f1;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}

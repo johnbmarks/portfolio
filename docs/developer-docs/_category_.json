@@ -1,0 +1,8 @@
+{
+  "label": "Developer documentation",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Developer guides, API documentation, and programming guides."
+  }
+}

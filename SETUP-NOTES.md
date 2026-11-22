@@ -142,3 +142,28 @@ It created a public repository at https://github.com/johnbmarks/portfolio, linke
 - **Public means read-only for others.** People can view, copy (fork), or suggest changes (pull requests), but only the account owner can change the repository. Nothing on GitHub can reach the Mac. Changes only come down when you choose **Fetch** or **Pull**.
 - **Backup:** every push stores the files and their full history on GitHub. Push often, because anything not pushed exists only on the Mac.
 - GitHub can take a few minutes to recognize the MIT license and show it in the repository sidebar.
+
+### Step 8: Set up Docusaurus (2026-11-22)
+
+**What was done:**
+1. Generated a starter "classic" Docusaurus site (version 3.10.2) with `npx create-docusaurus@latest site classic --javascript`. The tool only works in an empty folder, so it ran in a temporary folder.
+2. Copied only the needed files into `portfolio` (`package.json`, styles, favicon) and left the sample tutorial pages, blog posts, and dinosaur images behind.
+3. Set up `docusaurus.config.js` for https://johnbmarks.github.io/portfolio/ (`url`, `baseUrl: '/portfolio/'`, `organizationName: 'johnbmarks'`, `projectName: 'portfolio'`), plus the menu bar and footer.
+4. Created the pages:
+   - **Home** (`src/pages/index.js`): name, draft thesis statement, buttons, three highlight boxes.
+   - **About** (`src/pages/about.md`) and **Resume** (`src/pages/resume.md`): placeholder text with "To do" boxes.
+   - **Portfolio** (`docs/`): an overview page plus four sidebar headings (Developer documentation, Processes and standards, AI governance, UX and microcopy), each with a placeholder page.
+   - **Blog** (`blog/`): no posts yet. `authors.yml` is ready for the first post.
+5. Ran `npm install` and `npm run build`. The build succeeded with no broken links.
+6. Previewed every page locally at http://localhost:3000/portfolio/.
+
+**Problems and fixes:**
+
+| Problem | Cause | Fix |
+|---|---|---|
+| A cleanup command (`rm -rf docs/*`) was blocked by Claude Code's safety check. | The check stops deletions it can't fully verify. | Didn't delete anything. Copied only the wanted files into the repository instead. |
+| The preview panel didn't start the server (no output, nothing on port 3000). | The preview runner couldn't launch the npm or Node command. | Started the server directly (`node node_modules/@docusaurus/core/bin/docusaurus.mjs start`) and pointed the preview at http://localhost:3000. |
+| The **Resume** button on the home page was hard to read (dark text on blue). | The default button style didn't suit the blue banner. | Added a white outline style (`outlineButton`) in `src/pages/index.module.css`. |
+| `npm install` printed warnings about vulnerabilities and "install scripts not yet covered". | Routine for build tools. They only affect tools on the Mac, not the published site. | No action. **Don't run `npm audit fix --force`**, which can break Docusaurus. |
+
+**Content note:** the Home and About pages use the draft thesis statement from coaching. Replace it once it's final.

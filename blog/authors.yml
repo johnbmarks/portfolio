@@ -1,0 +1,6 @@
+# Blog authors. Use "authors: john" at the top of a blog post.
+john:
+  name: John Marks
+  title: Senior technical writer
+  url: https://github.com/johnbmarks
+  page: true

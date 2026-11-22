@@ -167,3 +167,22 @@ It created a public repository at https://github.com/johnbmarks/portfolio, linke
 | `npm install` printed warnings about vulnerabilities and "install scripts not yet covered". | Routine for build tools. They only affect tools on the Mac, not the published site. | No action. **Don't run `npm audit fix --force`**, which can break Docusaurus. |
 
 **Content note:** the Home and About pages use the draft thesis statement from coaching. Replace it once it's final.
+
+### Step 9: Turn on GitHub Pages (2026-11-22)
+
+**What was done:**
+1. Added `.github/workflows/deploy.yml`, a GitHub Actions workflow. On every push to `main`, GitHub installs Docusaurus on its own computer, builds the site, and publishes it.
+2. Turned on GitHub Pages with the workflow as its source:
+
+   ```bash
+   gh api -X POST repos/johnbmarks/portfolio/pages -f build_type=workflow
+   ```
+
+   To do this by hand instead: on github.com, open **portfolio → Settings → Pages** and set **Source** to **GitHub Actions**.
+
+**Result:** Pages is on, with the address https://johnbmarks.github.io/portfolio/. The site appears after the first push.
+
+**Notes:**
+- Pages had to be turned on **before** the first push. Otherwise the first publishing run would have failed.
+- Pages is free for public repositories. To take the site offline, turn Pages off in **Settings → Pages**.
+- Only text files are pushed. `node_modules/` and `build/` stay on the Mac. GitHub downloads its own copy of Docusaurus from `package.json`.

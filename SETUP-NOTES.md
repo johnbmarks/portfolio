@@ -198,3 +198,15 @@ Added the repository to GitHub Desktop (**Add an Existing Repository from your L
 - The run showed warnings that "Node.js 20 is deprecated" for the GitHub-provided actions. They're harmless for now (GitHub runs them on a newer Node.js automatically). Updating the action versions in `deploy.yml` later will clear them.
 - The "Summary" box in GitHub Desktop is only for new, uncommitted changes. When it says "No local changes", there's nothing to commit.
 - Keep private files (such as GitHub recovery codes) out of the `portfolio` folder. Anything inside it can be published.
+
+### Step 11: First pull request — site quick fixes (2026-11-26)
+
+From Diana's session 3 homework (task 1, site fixes, done as the first pull request in task 2).
+
+**What was done**, on a new branch `site-quick-fixes` instead of `main`:
+1. **Menu order:** About · Portfolio · Resume · Blog (the same order in the footer).
+2. **Favicon:** replaced the Docusaurus dinosaur (`static/img/favicon.ico`, deleted) with white "JM" initials on the site's dark blue (`static/img/favicon.svg`).
+3. **"To do" notes:** removed all seven. About and Resume keep the draft thesis sentence plus a "coming soon" line. The Portfolio overview lists the samples that are coming. Each sample page has a one-line "coming soon".
+4. Built the site (no broken links) and checked it in the local preview.
+
+**Why a branch:** changes on a branch don't reach the live site until a pull request is reviewed and merged into `main`. This is how a documentation team works, and later the pipeline's checks will run on each pull request.

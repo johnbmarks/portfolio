@@ -8,7 +8,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'John Marks',
   tagline: 'Senior technical writer',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.svg',
 
   future: {
     v4: true,
@@ -70,6 +70,7 @@ const config = {
       navbar: {
         title: 'John Marks',
         items: [
+          {to: '/about', label: 'About', position: 'left'},
           {
             type: 'docSidebar',
             sidebarId: 'portfolioSidebar',
@@ -77,7 +78,6 @@ const config = {
             label: 'Portfolio',
           },
           {to: '/resume', label: 'Resume', position: 'left'},
-          {to: '/about', label: 'About', position: 'left'},
           {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/johnbmarks/portfolio',
@@ -92,9 +92,9 @@ const config = {
           {
             title: 'Site',
             items: [
+              {label: 'About', to: '/about'},
               {label: 'Portfolio', to: '/portfolio'},
               {label: 'Resume', to: '/resume'},
-              {label: 'About', to: '/about'},
               {label: 'Blog', to: '/blog'},
             ],
           },
